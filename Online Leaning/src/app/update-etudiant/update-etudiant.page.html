@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>updateEtudiant</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>ajout</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label> {{id}}      </ion-label>
+     <ion-input [(ngModel)]="nom" type="text"> </ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label> lastname</ion-label>
+   <ion-input type="text" [(ngModel)]="prenom"> </ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-label > groupe</ion-label>
+   <ion-input type="text" [(ngModel)]="groupe"> </ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="UpdateRecord(nom, prenom, groupe)"> Update</ion-button>
+  </ion-content>
+</ion-content>

@@ -1,0 +1,105 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly 
+
+
+
+@import "~@ionic/angular/css/core.css";
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+*/
+
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+:root {
+    --ion-font-family: 'DM Serif Text', serif;
+    --custom-gradient-secondary: linear-gradient(to bottom, #ece9e6, #ffffff); 
+    --custom-gradient-dark: linear-gradient(to right, #232526, #414345); 
+
+}
+
+ion-title {
+    font-size: 30px;
+}
+
+.primary {
+    background: var(--custom-gradient-primary);
+    color: #ffffff;
+}
+
+.medium {
+    background: var(--custom-gradient-secondary);
+    color: #474141;
+    // color: #ffffff;
+}
+
+.dark {
+    background: var(--custom-gradient-dark);
+    color: #ffffff;
+}
+
+.night {
+    background: var(--custom-gradient-night);
+    color: #ffffff;
+}
+
+
+ion-tab-bar {
+    --border: none;
+    ion-tab-button {
+        --ripple-color: none;
+        
+        ion-icon {
+            padding: 10px;
+            font-size: 20px;            
+            border-radius: 50%;
+            transition: 200ms all ease-in-out;
+        }
+
+    }
+
+    .tab-selected {        
+        ion-icon {
+            color: #fff;
+            background: var(--custom-gradient-dark);
+        }
+    }
+
+}
+//.monthview-primary-with-event { background-color: #FF5722!important; }
+//.monthview-selected { background-color: #FF9800 !important; }

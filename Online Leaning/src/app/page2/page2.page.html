@@ -1,0 +1,262 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="danger" >
+    <ion-title>
+      Online <span>Lessons</span>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="danger" >
+  <ion-tab-bar  >
+    <ion-tab-button >
+      Home <ion-icon icon="assets/icon/home.svg" (click)="page1()">  
+   
+      </ion-icon>
+    </ion-tab-button>
+    <ion-tab-button >
+      <u> <b> Lessons</b></u><ion-icon style="color: #fff;
+      background: var(--custom-gradient-dark);" name="time-outline" (click)="page2()"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button >
+      Calendar<ion-icon name="calendar-outline"  (click)="page3()"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button >
+      About<ion-icon name="notifications-outline" (click)="page4()"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="background-pic">
+
+    <div class="ion-padding">
+      <div class="">
+        <h4 class="p-4">Dashboard <span class="fr link">Edit</span></h4>
+
+      </div>
+
+
+
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card  class="dark" [color]="buttonColor1" background="back1" (click)="Action1()">
+              <ion-card-content>
+                <div class="title">
+                  <ion-icon name="book-outline" class="fl"></ion-icon>
+                  <p> classes available </p>
+                  <h2>5</h2>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card  class="dark" [color]="buttonColor2" background="back2" (click)="Action2()">
+              <ion-card-content>
+                <div class="title">
+                  <ion-icon  name="mail-outline" class="fl"></ion-icon>
+                  <p>Student's Number</p>
+                  <h2>95</h2>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <h4 class="p-4">All <span class="fr link">Sort by <ion-icon class="sort-icon" name="chevron-down-outline">
+          </ion-icon> </span></h4>
+
+      <ion-row>
+        <ion-col size="10">
+          <ion-searchbar #q [showCancelButton]="true" (keyup.enter)="search(q.value)"
+            placeholder="search for specific lesson" [(ngModel)]="searchTerm" showCancelButton="focus" animated>
+          </ion-searchbar>
+        </ion-col>
+        <ion-col size="2">
+          <h6> <a href="http://localhost:8100/page2"> cancel</a> </h6>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-item *ngFor="let et of vid  | filter:searchTerm">
+        <ion-label>
+          <h3> {{et.title}}</h3>
+          <video poster="assets/{{et.type}}.jpg" class="fp_docs_player" id='my-video' controls
+            style="width: 100%; height: 50%;">
+            <source src={{et.url}} type="video/mp4" title="1080p">
+          </video>
+        </ion-label>
+      </ion-item>
+
+      <ion-grid fixed>
+        <ion-row>
+
+          <ion-col size="12">
+            <ion-card class="medium">
+              <ion-card-content>
+                <div class="title">
+                  <button ion-button icon-only round (click)="startVidJava()" class="fr icon-go">
+                    <ion-icon name="chevron-forward-outline" class="fr icon-go"></ion-icon>
+                  </button>
+                  <h2>Java
+                    <img src="assets/icon/java.svg" height="30" width="30">
+
+                  </h2>
+                  <ion-badge class="fl">
+                    5
+                  </ion-badge>
+                  <p>Total <br>videos</p>
+                </div>
+              </ion-card-content>
+
+              <ion-item *ngFor="let et of vidJava ">
+                <ion-label>
+                  <h3> {{et.title}}</h3>
+                  <video poster="assets/{{et.type}}.jpg" class="fp_docs_player" id='my-video' controls
+                    style="width: 90%; height: 25%;">
+                    <source src={{et.url}} type="video/mp4" title="1080p">
+                  </video>
+                </ion-label>
+              </ion-item>
+
+            </ion-card>
+          </ion-col>
+          <ion-col size="12">
+            <ion-card class="medium">
+              <ion-card-content>
+                <div class="title">
+
+                  <button ion-button icon-only round (click)="startVidMath()" class="fr icon-go">
+                    <ion-icon name="chevron-forward-outline" class="fr icon-go"></ion-icon>
+                  </button>
+                  <h2>Mathematics
+                    <img src="assets/icon/math.svg" height="23" width="30">
+                  </h2>
+                  <ion-badge class="fl">
+                    3
+                  </ion-badge>
+                  <p>Total <br>videos</p>
+                </div>
+              </ion-card-content>
+
+              <ion-item *ngFor="let et of vidMath ">
+                <ion-label>
+                  <h3> {{et.title}}</h3>
+                  <video poster="assets/{{et.type}}.jpg" class="fp_docs_player" id='my-video' controls
+                    style="width: 100%; height: 30%;">
+                    <source src={{et.url}} type="video/mp4" title="1080p">
+                  </video>
+                </ion-label>
+              </ion-item>
+
+            </ion-card>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-card class="medium">
+              <ion-card-content>
+                <div class="title">
+
+                  <button ion-button icon-only round (click)="startVidLinux()" class="fr icon-go">
+                    <ion-icon name="chevron-forward-outline" class="fr icon-go"></ion-icon>
+                  </button>
+                  <h2>Linux
+                    <img src="assets/icon/linux.svg" height="30" width="30">
+
+                  </h2>
+                  <ion-badge class="fl">
+                    3
+                  </ion-badge>
+                  <p>Total <br>videos</p>
+                </div>
+              </ion-card-content>
+
+              <ion-item *ngFor="let et of vidLinux ">
+                <ion-label>
+                  <h3> {{et.title}}</h3>
+                  <video poster="assets/{{et.type}}.jpg" class="fp_docs_player" id='my-video' controls
+                    style="width: 100%; height: 50%;">
+                    <source src={{et.url}} type="video/mp4"  title="1080p">
+                  </video>
+                </ion-label>
+              </ion-item>
+
+            </ion-card>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-card class="medium">
+              <ion-card-content>
+                <div class="title">
+
+                  <button ion-button icon-only round (click)="startVidEnglish()" class="fr icon-go">
+                    <ion-icon name="chevron-forward-outline" class="fr icon-go"></ion-icon>
+                  </button>
+                  <h2>English
+                    <img src="assets/icon/uk-flag.svg" height="30" width="30">
+
+                  </h2>
+                  <ion-badge class="fl">
+                    4
+                  </ion-badge>
+                  <p>Total <br>videos</p>
+                </div>
+              </ion-card-content>
+
+              <ion-item *ngFor="let et of vidEnglish ">
+                <ion-label>
+                  <h3> {{et.title}}</h3>
+                  <video poster="assets/{{et.type}}.jpg" class="fp_docs_player" id='my-video' controls
+                    style="width: 100%; height: 50%;">
+                    <source src={{et.url}} type="video/mp4" title="1080p">
+                  </video>
+                </ion-label>
+              </ion-item>
+
+            </ion-card>
+          </ion-col>
+
+
+
+          <ion-col size="12">
+            <ion-card class="medium">
+              <ion-card-content>
+                <div class="title">
+
+                  <button ion-button icon-only round (click)="startVidIonic()" class="fr icon-go">
+                    <ion-icon name="chevron-forward-outline" class="fr icon-go"></ion-icon>
+                  </button>
+                  <h2>Ionic
+                    <img src="assets/icon/ionicBlack.svg" height="30" width="30">
+
+                  </h2>
+                  <ion-badge class="fl">
+                    4
+                  </ion-badge>
+                  <p>Total <br>videos</p>
+                </div>
+              </ion-card-content>
+
+              <ion-item *ngFor="let et of vidIonic ">
+                <ion-label>
+                  <h3> {{et.title}}</h3>
+                  <video poster="assets/{{et.type}}.jpg" class="fp_docs_player" id='my-video' controls
+                    style="width: 100%; height: 50%;">
+                    <source src={{et.url}} type="video/mp4" title="1080p">
+                  </video>
+                </ion-label>
+              </ion-item>
+
+            </ion-card>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+
+
+      
+    </div>
+  </div>
+</ion-content>
+

@@ -1,0 +1,114 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="background-pic">
+    <div class="ion-padding">
+
+      <div class="background-filter">
+        <div class="shape"><img src="../../assets/shape.svg" /></div>
+        <form [formGroup]="form">
+
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                <h2>Sign Up </h2>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-input formControlName="username" placeholder="User name" [(ngModel)]="username"></ion-input>
+              </ion-item>
+              <ion-label color="danger" *ngIf="form.get('username').touched && form.get('username').errors?.required">* username is Mandatory </ion-label>
+
+              <!--
+           <ion-radio-group lines="full" [(ngModel)]="Gender" >
+            <ion-row>
+              
+            <ion-col> 
+            <ion-item>
+              <ion-label>Male</ion-label>
+              <ion-radio slot="start" value="male" checked></ion-radio>
+            </ion-item>
+            </ion-col>
+            <ion-col> 
+            <ion-item>
+              <ion-label>Female</ion-label>
+              <ion-radio slot="start" value="female"></ion-radio>
+            </ion-item>
+            </ion-col>
+            <ion-col>
+            <ion-item>
+              <ion-label>Other</ion-label>
+              <ion-radio slot="start" value="Other" checked></ion-radio>
+            </ion-item>
+          </ion-col>
+          </ion-row>
+          </ion-radio-group>
+          -->
+              <ion-item>
+                <ion-input formControlName="email" placeholder="Email Adress" [(ngModel)]="email" required></ion-input>
+              </ion-item>
+              <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.required">* Email is Mandatory </ion-label>
+              <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.email">Email is invalid </ion-label>
+
+              <ion-item>
+                <ion-input formControlName="age" type="number" inputMode="numeric" pattern="[0-9]*" [(ngModel)]="age"
+                  placeholder="Age"></ion-input>
+              </ion-item>
+              <ion-label color="danger" *ngIf="form.get('age').touched && form.get('age').errors?.required">* Age is Mandatory </ion-label>
+
+              <ion-item>
+                <ion-input formControlName="tel" type="number" inputMode="numeric" pattern="[0-9]*" [(ngModel)]="tel"
+                  placeholder="Telephone number"></ion-input>
+              </ion-item>
+              <ion-label color="danger" *ngIf="form.get('tel').touched && form.get('tel').errors?.required">* Telephone number is Mandatory </ion-label>
+
+
+              <!--
+            <ion-item>
+              <ion-select [interfaceOptions]="customAlertOptions" interface="alert" multiple="false" placeholder="Please choose your Gender">
+                <ion-select-option value="Male">Male</ion-select-option>
+                <ion-select-option value="Female">Female</ion-select-option>
+                <ion-select-option value="Other">Other</ion-select-option>
+              </ion-select>
+            </ion-item>
+            -->
+
+              <ion-item>
+                <ion-input formControlName="password" placeholder="Password" type="password" [(ngModel)]="pass1"
+                  required> </ion-input>
+              </ion-item>
+              <ion-label color="danger" *ngIf="form.get('password').touched && form.get('password').errors?.required">
+                <h5>* Password is Mandatory</h5>
+               </ion-label>
+              <h6> </h6>
+               <ion-label color="danger" *ngIf="checkPassword(pass1)==false && form.get('password').touched" >  <h6>* Password must contain at least At least 8 characters in length,Lowercase letters,Uppercase letters,Numbers and Special characters </h6>
+               </ion-label>
+              <ion-item>
+                <ion-input formControlName="repassword" placeholder="Repeat Password" type="password"
+                  [(ngModel)]="pass2" required> </ion-input>
+              </ion-item>
+              <!-- <ion-item>
+<ion-datetime displayFormat="MMMM DD YYYY" placeholder="Select Date">
+
+</ion-datetime></ion-item> -->
+
+              <div class="bottom-section">
+                <ion-button (click)="inscrire()" color="success" size="full"  [disabled]="!form.valid">Create Account</ion-button>
+                <span> Do you have an account ? <a href="http://localhost:8100/login"> Sign in</a></span>
+              </div>
+
+
+
+
+            </ion-card-content>
+          </ion-card>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</ion-content>

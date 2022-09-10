@@ -1,0 +1,38 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+
+    <div class="background-pic">
+     <div class="background-filter">
+       <center><div class="shape"><img src="../../assets/shape.svg"  height="90" width="90"/></div>
+       </center>
+       <ion-card>
+         <ion-card-header>
+           <ion-card-title>
+Forget your password ?           </ion-card-title>
+           <ion-card-subtitle>
+           No need to worry, Enter you email address and click the button bellow.
+           </ion-card-subtitle>
+         </ion-card-header>
+         <ion-card-content>
+            <ion-item>
+             <ion-input *ngIf="!this.email"placeholder="Email Adress" [(ngModel)]="email"></ion-input>
+             <ion-input value="{{email}}"*ngIf="this.email"placeholder="Email Adress" [(ngModel)]="email" disabled="true"></ion-input>
+
+            </ion-item>
+            
+            
+
+            <div class="bottom-section">
+              <ion-button (click)="recover()" expand="full">recover</ion-button>
+              <span> Back to Login Page <a href="http://localhost:8100/login"> Login</a></span>
+            </div>
+         </ion-card-content>
+       </ion-card>
+     </div>
+  </div>
+
+</ion-content>
+

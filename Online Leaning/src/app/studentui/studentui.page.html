@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>studentui</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+ 
+ 
+
+   <ion-button expand="block" (click)="allerAjout()"> Ajouter Un Etudiant</ion-button>
+   
+      <ion-item *ngFor="let et of etds">
+        
+        <ion-label>
+          <h3>{{et.age}} {{et.username}}</h3>
+          <h4>{{et.tel}}</h4>
+        </ion-label>
+        <ion-button (click)="delEtudiant(et)">Del</ion-button>
+        <ion-button (click)="goToUpdatePage(et)">Update</ion-button>
+
+      </ion-item>
+     <!--
+      <ion-button expand="block" (click)="compare()"> Ajouter Un Etudiant</ion-button>
+   
+      <ion-item *ngFor="let et of vid | filter:searchTerm">
+        
+        <ion-label>
+          <h3>{{et.url}} {{et.title}}</h3>
+          <h4>{{et.type}}</h4>
+        </ion-label>
+        <ion-button (click)="delEtudiant(et)">Del</ion-button>
+        <ion-button (click)="goToUpdatePage(et)">Update</ion-button>
+
+      </ion-item>
+-->
+
+<ion-button (click)="delTest()"> test</ion-button>
+</ion-content>
